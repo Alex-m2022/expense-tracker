@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./expense.css">
+</head>
+<body>
+    <h1>Expense Tracker</h1>
+    <form class="expenses" onsubmit="return false">
+        <Label for="expenseName">Name</Label>
+        <input type="text" id="myname"  name="" id="expenseName" placeholder="expense name">
+        <Label for="Date">Date</Label>
+        <input type="date"  id="Date" placeholder="MM/DD/YYYY">
+        <Label for="Amount">Amount</Label>
+        <input type="number" id="Amount">
+        <button id="submit"> Add Expense</button>
+    </form>
+    <div>
+        <table id="mytable">
+            <caption> Expense</caption>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Mcdonalds</td>
+                <td>12/4/2022</td>
+                <td>$5.89</td>
+                <td><button>X</button></td>
+            </tr>
+
+        </table>
+    </div>
+    <script src="./expense.js"></script>
+</body>
+</html>
