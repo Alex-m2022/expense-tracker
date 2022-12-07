@@ -9,14 +9,16 @@
 </head>
 <body>
     <h1>Expense Tracker</h1>
-    <form class="expenses" onsubmit="return false">
+    <form class="expenses" onsubmit="return false" name="sample">
         <Label for="expenseName">Name</Label>
-        <input type="text" id="myname"  name="" id="expenseName" placeholder="expense name">
+        <input type="text" class="inputfield"  name="myname"  placeholder="expense name">
+        
         <Label for="Date">Date</Label>
-        <input type="date"  id="Date" placeholder="MM/DD/YYYY">
+        <input type="date" class="inputfield" name="mydate"   placeholder="MM/DD/YYYY">
+        
         <Label for="Amount">Amount</Label>
-        <input type="number" id="Amount">
-        <button id="submit"> Add Expense</button>
+        <input type="number" class="inputfield" name="mynumb">
+        <input type="button" id="submit" value="Add Data" onclick="addinput()">
     </form>
     <div>
         <table id="mytable">
@@ -27,13 +29,6 @@
                 <th>Amount</th>
                 <td>&nbsp;</td>
             </tr>
-            <tr>
-                <td>Mcdonalds</td>
-                <td>12/4/2022</td>
-                <td>$5.89</td>
-                <td><button>X</button></td>
-            </tr>
-
         </table>
     </div>
     <script src="./expense.js"></script>

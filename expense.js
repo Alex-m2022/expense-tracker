@@ -2,62 +2,40 @@
 // 12/4/2022
 // app features: app takes in 3 inputs. expense name, expense date and total amount. expense will then be displayed at a table below
 
-
-/*idea: onclick submit button, append all three of user inputs to a in a object ie 
-object () {
-    name: asdfasgd
-    date: 11/11/11
-    amount: 1
-}
-
-then append object properties to new table row ie
-create td>tr(append, object.name)
-tr(object.date)
-tr(object.amount)
-
-if the user types in a incorrect date ie 1501/111, or january first display a error */
-
-let expenseTab = []
-
-let addinput = (ev) => {
-    ev.preventDefault(); // stop the form from submitting
-    let expenses = {
-        NameExpense: document.getElementById('myname').value,
-        date: document.getElementById('Date').value,
-        amount: document.getElementById('Amount').value
-    }
-    expenseTab.push(expenses)
-    Array.from(expenseTab)
-    document.forms[0].reset() // clears the form for the next entries
-
-    // now i need to create a tr with 4 tds. I will append my name, date, and amount value to the first 3 tds, as well as a delete 
-    // button in the last td. the delete button will delete the entire row on click
-    table = document.getElementById('mytable')
-    trow = document.createElement('tr')
-    table.appendChild(trow)
-    for (i = 0; i < 4; i++) {
-        td = document.createElement('td') 
-        td.textContent = ''
-        for (let z = 0; z < expenseTab.length; z++) {
-            td.textContent += expenseTab[z]
-            console.log(expenseTab[z])
-        }
-        trow.appendChild(td)
-
-        /*for (let z = 0; z < expenseTab.length; z++) {
-            td.textContent += expenseTab[z]
-        } 
-        /*tchild = trow.children 
-        n = 1
-        for (i = 0; i < tchild; i++) {
-            td[i].id = 'value'+n
-            n++
-        } */
-    }
+let addinput = () => {
+    // storing input value into variables. i use document. the form name. the input name. value to grab the value
+    let myname = document.sample.myname.value
+    let mydate = document.sample.mydate.value
+    let mynumb = document.sample.mynumb.value
     
+    // grabbing my table and row so i can append to it later
+    let mytable = document.getElementById('mytable')
+    let tr = document.createElement('tr')
+        
+    // im making 4 table data elements and appending them into the table
+    mytable.appendChild(tr)
+    let td1 = tr.appendChild(document.createElement('td'))
+    let td2 = tr.appendChild(document.createElement('td'))
+    let td3 = tr.appendChild(document.createElement('td'))
+    let td4 = tr.appendChild(document.createElement('td'))
 
+    // im creating a delete button so that the user can delete the expense row.
+    let btn = document.createElement('button')
+    btn.textContent = 'delete'
+    td4.appendChild(btn)
+    btn.addEventListener('click', () => {
+        tr.remove()
+    })
+
+    // setting the table data value to the user input value
+    td1.innerHTML = myname
+    td2.innerHTML = mydate
+    td3.innerHTML = '$' + mynumb
+
+    // clears the input value for the user to add the next input
+    let inputs = document.querySelectorAll('.inputfield')
+    inputs.forEach(input => {
+        input.value = '';
+      });
 }
 
-document.addEventListener('DOMContentLoaded', ()=> {
-    document.getElementById('submit').addEventListener('click', addinput)
-})
