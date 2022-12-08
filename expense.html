@@ -8,29 +8,47 @@
     <link rel="stylesheet" href="./expense.css">
 </head>
 <body>
-    <h1>Expense Tracker</h1>
-    <form class="expenses" onsubmit="return false" name="sample">
-        <Label for="expenseName">Name</Label>
-        <input type="text" class="inputfield"  name="myname"  placeholder="expense name">
-        
-        <Label for="Date">Date</Label>
-        <input type="date" class="inputfield" name="mydate"   placeholder="MM/DD/YYYY">
-        
-        <Label for="Amount">Amount</Label>
-        <input type="number" class="inputfield" name="mynumb">
-        <input type="button" id="submit" value="Add Data" onclick="addinput()">
+    <header>
+        <h1>expense tracker</h1>
+    </header>
+    <section class="h2section">
+        <h2>A simple way to track your personal finances</h2>
+    </section>
+    <form action=""  onsubmit="return false" name="expform" id="form">
+        <div>
+            <label for="expensename"> Name</label>
+            <input type="text" name="expensename" id="expensename" class="inputfield" placeholder="expense name">
+            <div id="error"></div>
+        </div>
+        <div>
+            <label for="expensedate"> Date</label>
+            <input type="date" name="expensedate" id="expensedate" class="inputfield" placeholder="MM/DD/YYYY">
+            <div id="error2"></div>
+        </div>
+        <div>
+            <label for="expensename"> Amount</label>
+            <input type="number" name="expenseAmount" id="expenseAmount" class="inputfield" step="0.01">
+            <div id="error3"></div>
+        </div>
+        <button type="submit">Add expense</button>
     </form>
-    <div>
+    <div class="tablediv">
         <table id="mytable">
             <caption> Expense</caption>
-            <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Amount</th>
-                <td>&nbsp;</td>
-            </tr>
+            <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <td>&nbsp;</td>
+                </tr>
+            </thead>
+            <tbody id="tbody"> 
+            </tbody>
+            <tfoot>
+            </tfoot>    
         </table>
+        <script src="./expense.js"></script>
     </div>
-    <script src="./expense.js"></script>
 </body>
 </html>

@@ -1,3 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+}
+
+header {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.h2section {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+
+}
+
+form > div {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.tablediv {
+    display: flex;
+    justify-content: center;
+}
+
 table {
     border-collapse: collapse;
     border: 2px solid rgb(200,200,200);
@@ -8,5 +45,7 @@ table {
 
 td, th {
     border: 1px solid rgb(190,190,190);
-    padding: 10px 20px;
+    height:70px;
+    width: 100px;
+    text-align: center;
 }
